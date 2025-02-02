@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            display: inline-block;
+            margin: 10px;
+            line-height: 200px;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Learning Vue 3</h1>
+    <div id="app">
+        <h1>{{title}}</h1>
+        <h4>Author name is {{author}}</h4>
+        <h4>Author age is {{age}}</h4>
+
+        <div class="box" @mouseover="mouseOverHandler">Mouse Over</div>
+        <div class="box" @mouseleave="mouseLeaveHandler">Mouse Leave</div>
+        <div class="box" @dblclick="mouseDoubleClickHandler">Mouse Double Click</div>
+    </div>
+    <script src="app1.js"></script>
+</body>
+</html>

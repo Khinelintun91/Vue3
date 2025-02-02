@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <Style>
+        button{
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: #45a049;
+        }
+        a{
+            text-decoration: none;
+            color: greenyellow;
+            width: 100px;
+            padding: 10px;
+            border: 1px solid greenyellow;
+            background-color: grey;
+            margin: 10px;
+        }
+        a:hover{
+            color: black;
+        }
+        li{
+            list-style: none;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid grey;
+            width: 300px;
+        }
+        .container{
+            width: 500px;
+            margin: 20px auto;
+        }
+        .favourite{
+            background-color: #ca3c3c;
+        }
+    </Style>
+</head>
+<body>
+    <h1>Learning Vue 3</h1>
+    <div id="app" class="container">
+        <ul v-if="showBooks">
+           <div v-for="book in filteredBooks">
+            <li :class="{favourite: book.isFav}"@click="book.isFav = !book.isFav">
+            <img :src="book.img" width="100px" height="150px" alt="" style="float: left; margin-right: 10px;">
+            <p>The Book Name is {{book.title}}</p>
+            <p>The Author Name is {{book.author}}</p>
+            <p>The Author Age is {{book.age}}</p><hr>
+            </li>
+           </div>
+        </ul>
+        <button @click="showBooks=!showBooks">
+            <span v-if="showBooks">Hide</span>
+            <span v-if="!showBooks">Show</span>
+            </button>
+            <a :href="link">Google</a>
+    </div>
+   
+    <script src="app5.js"></script>
+</body>
+</html>

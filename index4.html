@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <Style>
+        button{
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: #45a049;
+        }
+        a{
+            text-decoration: none;
+            color: greenyellow;
+            width: 100px;
+            padding: 10px;
+            border: 1px solid greenyellow;
+            background-color: grey;
+            margin: 10px;
+        }
+        a:hover{
+            color: black;
+        }
+    </Style>
+</head>
+<body>
+    <h1>Learning Vue 3</h1>
+    <div id="app">
+        <div v-if="showBooks">
+           <div v-for="book in books">
+            <p>The Book Name is {{book.title}}</p>
+            <p>The Author Name is {{book.author}}</p>
+            <p>The Author Age is {{book.age}}</p><hr>
+           </div>
+        </div>
+        <button @click="showBooks=!showBooks">
+            <span v-if="showBooks">Hide</span>
+            <span v-if="!showBooks">Show</span>
+            </button>
+            <a :href="link">Google</a>
+    </div>
+   
+    <script src="app4.js"></script>
+</body>
+</html>
